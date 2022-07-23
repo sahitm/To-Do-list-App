@@ -44,7 +44,7 @@ function App() {
       <div className='Header'>
         <h1>To-Do-List</h1>
         <div className='inputBar'>
-          <input ref={inputRef} type="text" placeholder='task....' onChange={(event) => setItem(event.target.value)}/>
+          <input ref={inputRef} onKeyDown={(event) => {if(event.keyCode == 13) addTask()}} type="text" placeholder='task....' onChange={(event) => setItem(event.target.value)}/>
           <button onClick={addTask} >Add To List</button>
         </div>
         <hr />
